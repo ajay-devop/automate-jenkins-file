@@ -1,3 +1,20 @@
-<body bgcolor=pink />
-     <h1> hello </h1>
+pipeline {
+         agent any
+	  stages {
+	         stage (Pull the code) {
+		       steps {
+		              sh 'git clone'
+		       }
+		 }
+		 stage (Build the code) {
+		       steps {
+		              sh 'docker build -t aj;v1 .'
+		       }
+		 }
+		 stage (run the contanier) {
+		       steps {
+		       }
+		 }
+	  }
+}
 
