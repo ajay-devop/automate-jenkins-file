@@ -6,13 +6,20 @@ pipeline {
 		              sh 'git clone'
 		       }
 		 }
-		 stage (Build the code) {
+		 stage (package Building) {
 		       steps {
-		              sh 'docker build -t aj;v1 .'
+		              sh 'mvn clean package'
 		       }
 		 }
-		 stage (run the contanier) {
+		 stage (Build a dockerfile) {
 		       steps {
+		              sh 'docker build -t image:$BUILD_TAG .'
+			      sh 'docker tag img:tag udername/img:tag'
+		       }
+		 }
+		 stage (docker hub) {
+		       steps {
+		       )])
 		       }
 		 }
 	  }
