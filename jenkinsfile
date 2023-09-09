@@ -19,7 +19,6 @@ pipeline {
 			      sh 'docker tag img:tag udername/img:tag'
 		       }
 		 }
-
 	  }
 }
 
