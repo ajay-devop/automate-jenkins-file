@@ -1,9 +1,11 @@
 pipeline {
-         agent any
+         agent {
+	        Label "aj-slave"
+	 }
 	  stages {
 	         stage (Pull the code) {
 		       steps {
-		              sh 'git clone'
+		              git branch: 'main', url: 'https://github.com/ajay-devop/automate-jenkins-file.git'
 		       }
 		 }
 		 stage (package Building) {
@@ -17,11 +19,7 @@ pipeline {
 			      sh 'docker tag img:tag udername/img:tag'
 		       }
 		 }
-		 stage (docker hub) {
-		       steps {
-		       )])
-		       }
-		 }
+
 	  }
 }
 
