@@ -1,6 +1,6 @@
 pipeline { 
          agent {
-	        Label "aj-slave"
+	        label "aj-slave"
 	 }
 	  stages {
 	         stage (Pull the code) {
@@ -10,13 +10,7 @@ pipeline {
 		 }
 		 stage (package Building) {
 		       steps {
-		              sh 'mvn clean package'
-		       }
-		 }
-		 stage (Build a dockerfile) {
-		       steps {
-		              sh 'docker build -t image:$BUILD_TAG .'
-			      sh 'docker tag img:tag udername/img:tag'
+		              sh 'sudo mvn clean package'
 		       }
 		 }
 	  }
