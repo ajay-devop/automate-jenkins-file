@@ -3,12 +3,12 @@ pipeline {
 	        label "aj-slave"
 	 }
 	  stages {
-	         stage (Pull the code) {
+	         stage ("Pull the code") {
 		       steps {
 		              git branch: 'main', url: 'https://github.com/ajay-devop/automate-jenkins-file.git'
 		       }
 		 }
-		 stage (package Building) {
+		 stage ("package Building") {
 		       steps {
 		              sh 'sudo mvn clean package'
 		       }
