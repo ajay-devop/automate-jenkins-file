@@ -1,4 +1,4 @@
-pipeline { 1
+pipeline { 
          agent {
 	        Label "aj-slave"
 	 }
