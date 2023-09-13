@@ -18,7 +18,7 @@ pipeline{
 			stage (" Build a docker Image " ){
 			     	steps {
 					sh 'sudo docker build -t new-java-app:$BUILD_TAG .'
-					sh 'sudo docker tag new-java-app:$BUILD_TAG ajay-devop/new-java-app:$BUILD_TAG'
+					sh 'sudo docker tag new-java-app:$BUILD_TAG ajaydevop/new-java-app:$BUILD_TAG'
 		
 		                        }
 			}
@@ -26,7 +26,7 @@ pipeline{
 				steps {
 					withCredentials([usernamePassword(credentialsId: 'my-docker-passwd', passwordVariable: 'docker_hub_pass_var', usernameVariable: 'docker_hub_user_var')]) {
 					sh 'sudo docker login -u ${docker_hub_user_var} -p ${docker_hub_pass_var}'
-					sh 'sudo docker push ajay-devop/new-java-app:$BUILD_TAG'
+					sh 'sudo docker push ajaydevop/new-java-app:$BUILD_TAG'
 }
 					}
 	
