@@ -37,6 +37,11 @@ pipeline{
 				       sh 'sudo docker run -dit --name new-java-app -p 8080:8080 new-java-app:$BUILD_TAG'
 				}
 			}
+			stage ("show the continer post"){
+                               steps {
+                                      sh 'sudo docker ps '
+			       }
+			}
 			stage("Approval status") {
                                steps {
                                      input " Please approve to proccess with deployment"
