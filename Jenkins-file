@@ -42,9 +42,14 @@ pipeline{
                                       sh 'sudo docker ps '
 			       }
 			}
-			stage("Approval status") {
+			stage ("Approval status") {
                                steps {
                                      input " Please approve to proccess with deployment"
+			       }
+			}
+			stage ("check website") {
+                               steps {
+                                     sh 'sudo curl http://15.206.67.35:8080/java-web-app/'
 			       }
 			}
                 }
