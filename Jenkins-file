@@ -17,7 +17,7 @@ pipeline{
                         }
 			stage (" Build a docker Image " ){
 			     	steps {
-					sh 'sudo docke rmi -f $(docker images)'
+					sh 'sudo docker rmi -f $(docker images)'
 					sh 'sudo docker build -t new-java-app:$BUILD_TAG .'
 					sh 'sudo docker tag new-java-app:$BUILD_TAG ajaydevop/new-java-app:$BUILD_TAG'
 		
