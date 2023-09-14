@@ -40,15 +40,15 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Welcome to DevOpswithSR, India , in fully automated jenkins</h2>
-			<h3>Contact training@srdevops.com or mob 9887764601</h3>
+			<h2>Welcome to DevOps with AJAY BENIWAL, India , in fully automated jenkins</h2>
+			<h3>Contact AjayBoss@srdevops.com or mob 9680444642</h3>
 		</div>	
 	</div>
 
 
 	<hr>
 	<footer>
-		<p>&copy; srdevops 2022</p>
+		<p>&copy; ajdevops 2023</p>
 	</footer>
 </div>
 
