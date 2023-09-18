@@ -1,4 +1,3 @@
-[Oha
 pipeline {
 
         agent {
