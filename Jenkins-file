@@ -1,5 +1,5 @@
 [Oha
-pipeline{
+pipeline {
 
         agent {
                 label "aj-slave"
