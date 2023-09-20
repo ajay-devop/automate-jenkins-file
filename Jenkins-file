@@ -41,15 +41,21 @@ pipeline {
                                       sh 'sudo docker ps '
 			       }
 			}
+			stage ("check website") {
+                               steps {
+			              retry (5) {
+                                                script {
+                                                         sh 'curl http://172.31.43.52:8080/java-web-app/' | grep -i -E "india|aj"      
+					         }
+				      }
+                                    
+			       }
+			}
 			stage ("Approval status") {
                                steps {
                                      input " Please approve to proccess with deployment"
-			       }
-			}
-			stage ("check website") {
-                               steps {
-                                     sh 'sudo curl http://15.206.67.35:8080/java-web-app/'
-			       }
-			}
+                               }
+                        }
+
                 }
         }
