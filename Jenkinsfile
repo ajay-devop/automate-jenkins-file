@@ -49,7 +49,7 @@ pipeline {
                                steps {
 			              retry (5) {
                                                 script {
-                                                         sh 'curl http://172.31.43.52:8080/java-web-app/ | grep -i -E "india|aj"'      
+                                                         sh 'curl http://172.31.34.68:8080/java-web-app/ | grep -i -E "india|aj"'      
 					         }
 				      }
                                     
