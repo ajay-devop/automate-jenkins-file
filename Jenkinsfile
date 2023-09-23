@@ -62,7 +62,7 @@ pipeline {
                         }
 			stage ("production EVN") {
 			       steps {
-			               sshagent(['production']) {
+			               sshagent(['production-key']) {
 				        sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.151.223.58 sudo docker run -d -p 32768:8080 ajaydevop/new-java-app:$BUILD_TAG'
 
 
