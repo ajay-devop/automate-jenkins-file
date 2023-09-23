@@ -28,9 +28,8 @@ pipeline {
                                         sh 'sudo docker login -u ajaydevop -p ${docker-log-pass}'
 					 sh 'sudo docker push ajaydevop/new-java-app:$BUILD_TAG'
 
-}
+                                                          }
 
-					}
 
 				}	
 	
