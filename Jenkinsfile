@@ -11,7 +11,8 @@ pipeline {
                         }
                         stage (" Build the code "){
                                 steps {
-                                        sh 'sudo mvn clean package'
+                                        sh 'sudo mvn dependency:purge-local-repository'
+					sh 'sudo mvn clean package'
                                         }
                         }
 			stage (" Build a docker Image " ){
