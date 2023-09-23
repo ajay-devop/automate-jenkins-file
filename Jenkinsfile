@@ -25,7 +25,7 @@ pipeline {
 			stage (" Push to dockerhub" ){
 				steps {
 				  withCredentials([usernamePassword(credentialsId: 'docker-hub-pass', passwordVariable: 'docker_hub_pass', usernameVariable: 'docker_user_var')]) {
-                                        sh 'sudo docker login -u ${docker_user_var} -p ${docker_hub_pass_var}'
+                                        sh 'sudo docker login -u ${docker_user_var} -p ${docker_hub_pass}'
 					sh 'sudo docker push ajaydevop/new-java-app:$BUILD_TAG'
 
                                       }
