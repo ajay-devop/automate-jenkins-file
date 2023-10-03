@@ -1,7 +1,7 @@
 pipeline {
 
         agent {
-                label "aj-slave"
+                label "gcp-slave"
                 }
                 stages{
                         stage ("Pull the code latest from SCM"){
