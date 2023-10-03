@@ -63,9 +63,9 @@ pipeline {
 			stage ("production EVN") {
 			       steps {
 			               script {
-			                       sshagent(['gcp-agent']) {
-				                  sh 'ssh beniwalajay@34.126.209.86 -o StrictHostKeyChecking=no'
-					          sh 'ssh beniwalajay@34.126.209.86  sudo docker run -d -p 8080:8080 ajaydevop/new-java-app:$BUILD_TAG'
+			                       sshagent(['gcp-by-aws-agent']) {
+				                  sh 'ssh ec2-user@43.204.237.82 -o StrictHostKeyChecking=no'
+					          sh 'ssh ec2-user@43.204.237.82  sudo docker run -d -p 8080:8080 ajaydevop/new-java-app:$BUILD_TAG'
                                           }
 
 				     }
