@@ -24,8 +24,8 @@ pipeline {
 			}
 			stage (" Push to dockerhub" ){
 				steps {
-				  withCredentials([usernamePassword(credentialsId: 'docker-hub-pass', passwordVariable: 'docker_hub_pass', usernameVariable: 'docker_user_var')]) {
-                                        sh 'sudo docker login -u ${docker_user_var} -p ${docker_hub_pass}'
+				  withCredentials([usernamePassword(credentialsId: 'docker-hub-pass', passwordVariable: 'docker_pass_var', usernameVariable: 'docker_user_var')]) {
+                                        sh 'sudo docker login -u ${docker_user_var} -p ${docker_pass_var}'
 					sh 'sudo docker push ajaydevop/new-java-app:$BUILD_TAG'
 
                                       }
@@ -36,7 +36,7 @@ pipeline {
 			}
 			stage ("testing the pipeline") {
                                 steps {
-				       sh 'sudo docker rm -f $(docker ps -a -q)'
+				       
 				       sh 'sudo docker run -dit --name new-java-app -p 8080:8080 new-java-app:$BUILD_TAG'
 				}
 			}
@@ -49,7 +49,7 @@ pipeline {
                                steps {
 			              retry (5) {
                                                 script {
-                                                         sh 'curl http://172.31.34.68:8080/java-web-app/ | grep -i -E "india|aj"'      
+                                                         sh 'curl http://192.168.0.3:8080/java-web-app/ | grep -i -E "india|aj"'      
 					         }
 				      }
                                     
