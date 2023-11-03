@@ -36,7 +36,7 @@ pipeline {
 			}
 			stage ("testing the pipeline") {
                                 steps {
-				       sh 'sudo docker rm -f $(docker ps -a -q)'aaaa
+				       
 				       sh 'sudo docker run -dit --name new-java-app -p 8080:8080 new-java-app:$BUILD_TAG'
 				}
 			}
@@ -49,7 +49,7 @@ pipeline {
                                steps {
 			              retry (5) {
                                                 script {
-                                                         sh 'curl http://192.168.0.3:8080/java-web-app/ | grep -i -E "india|aj"'      
+                                                         sh 'curl http://15.206.168.215:8080/java-web-app/ | grep -i -E "india|aj"'      
 					         }
 				      }
                                     
